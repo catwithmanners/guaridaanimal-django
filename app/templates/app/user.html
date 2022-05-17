@@ -3,6 +3,14 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block navbar %}
+<li class="nav-item active">
+    <a class="nav-link text-light" href="{% url 'index'%}">INICIO</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link text-light" href="{% url 'login' %}">INICIAR SESIÓN</a>            
+</li>
+{% endblock %}
 {% block contenido %}
 <div class="row">
     <div class="col-sm-3"></div>

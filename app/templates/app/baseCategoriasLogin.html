@@ -17,45 +17,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{% static 'app/css/style.css'%}">
 </head>
-<header">
-    <nav class="navbar navbar-expand-sm navbar-light nav nav-tabs">
-            <a class="navbar-brand text-light" href="{% url 'indexLogin' %}"><img src="{% static 'app/img/logo.png'%}" alt="" width="250"></a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" href="{% url 'indexLogin' %}">INICIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="{% url 'carrito' %}">CARRITO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="{% url 'perfil' %}">PERFIL</a>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" style="background-color: maroon;" class="nav-link btn text-light font-weight-bold" data-toggle="modal" data-target="#cierre">Cerrar sesión</button>
-                        <!-- The Modal -->
-                        <div class="modal" id="cierre">
-                            <div class="modal-dialog modal-sm">
-                                <div class="modal-content">
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title text-dark">¿Está seguro de cerrar su sesión?</h4>
-                                    </div>
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <a href="{% url 'index' %}" class="btn btn-danger btn-sm">Cerrar sesión</a>
-                                        <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancelar</button>
-                                    </div>
+<header>
+    <nav class="navbar navbar-expand-sm nav nav-tabs">
+        <a class="navbar-brand text-light" href="{% url 'indexLogin' %}"><img src="{% static 'app/img/logo.png'%}" alt="" width="250"></a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="{% url 'indexLogin' %}">INICIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'carrito' %}">CARRITO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'perfil' %}">PERFIL</a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" style="background-color: maroon;" class="nav-link btn text-light font-weight-bold" data-toggle="modal" data-target="#cierre">Cerrar sesión</button>
+                    <!-- The Modal -->
+                    <div class="modal" id="cierre">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-dark">¿Está seguro de cerrar su sesión?</h4>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <a href="{% url 'index' %}" class="btn btn-danger btn-sm">Cerrar sesión</a>
+                                    <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancelar</button>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
-            </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </nav>
     <!--LINEAS DE CARRUSEL-->
     <div class="carousel slide" data-ride="carousel" id="carouselExampleIndicators">
@@ -76,7 +76,7 @@
     
 </header>
 <body class="fondo-madera">
-    <div class="container-fluid">
+    <div class="container-fluid fondo-madera">
         <div class="row fondo-madera-02 pt-5 pb-5" id="row-categorias">
             <div class="col-sm-12">
                 <div class="row">

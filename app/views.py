@@ -178,7 +178,13 @@ def modUsuarios(request, run):
             formulario.save()
             datos['mensaje'] = 'Usuario modificado correctamente!'
             datos['form'] = formulario
-    return 
+    return render(request, 'app/', datos)
+
+def eliminarUsuario(request, run):
+    usuario = Usuario.objects.get(run=run)
+    usuario.delete()
+
+    return redirect(to="listarUsuario")
 #CARRITO
 def carrito(request):
     carrito = ItemsCarro.objects.all()
