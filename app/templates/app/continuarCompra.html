@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'app/css/style.css'%}"> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Tienda</title>
+</head>
+<header>
+  <nav class="navbar navbar-expand-lg  nav nav-tabs navbar-ligh bg-dark">
+    <div class="container">
+      <a class="navbar-brand text-light" href="index.html"><img src="{% static 'app/img/logo.png' %}" alt="" width="250"></a> <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-light" href="{% url 'index'%}">INICIO</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link text-light border border-light" href="{% url 'login'%}">INICIAR SESIÓN</a>            
+          </li>
+          <li class="nav-item pl-3">
+            <a class="nav-link bg-success text-light bg-suscrip" href="{% url 'inscripcion'%}">SUSCRIBIRSE</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+        <h1 class="text-center pt-5 text-light">ENTREGA</h1>
+        <hr>
+    </div>
+</header>
+
+<body class="bg-dark">
+
+    
+    
+    <!-- END SECTION STORE -->
+    <!-- START SECTION SHOPPING CART -->
+    <section class="shopping-cart ">
+      <div class="container">
+        <div class="row col-sm-12">
+          <div class="col col-sm-2">
+
+          </div>
+          <div class="col col-sm-8 text-white">
+            <form action="/action_page.php ">
+                <div class="form-group">
+                  <label for="email">Ingrese Correo</label>
+                  <input type="text" class="form-control" placeholder="Correo" id="correo">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Direccion : </label>
+                  <input type="text" class="form-control" placeholder="Enter password" id="pwd">
+                </div>
+                <div class="form-group">
+                    <label for="pwd"> NOMBRE </label>
+                    <input type="text" class="form-control" placeholder="Enter password" id="pwd">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">APELLIDO  : </label>
+                    <input type="text" class="form-control" placeholder="Enter password" id="pwd">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">RUT  : </label>
+                    <input type="text" class="form-control" placeholder="Enter password" id="pwd">
+                  </div>
+
+                <div class="form-group form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                  </label>
+
+
+
+
+                </div>
+                <button type="submit" class="btn btn-primary btn-success"> IR AL PAGO</button>
+              </form>
+          <div class="col col-sm-2"></div>
+
+
+        </div>
+      </div>
+           
+
+    </section>
+ <!-- Footer -->
+    <footer class="fondo-oscuro text-center text-white "> 
+      <div class="container p-4">
+        <!-- REDES SOCIALES  -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="www.facebook.com" role="button"
+            ><i class="fab fa-facebook"></i
+          ></a>
+    
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="www.twitter.com" role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+    
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="www.google.cl" role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+    
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="www.instagram.com" role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="www.github.com" role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <div class="row">
+          <div class="col-sm-4">
+            <section class="mb-4">
+              <p>
+                Encuentranos en Avenida Concha Y Toro, Av. San Carlos 1340, Puente Alto, Región Metropolitana.
+              </p>
+              <p>
+                Horarios de atención:
+                Lunes a Viernes
+                08:30 a 17:30
+                Sábados
+                09:00 a 14:00
+              </p>
+            </section>
+          </div>
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4">
+            <section class="mb-4">
+              <h5>
+                CONTACTO
+              </h5>
+              <p>
+                EMAIL:
+                thebatman@dccomics.com
+              </p>
+              <p>
+                MESA CENTRAL:
+                +569 5454 5454
+              </p>
+            </section>        
+          </div>
+        </div>
+        <!-- TEXTO DEBAJO DE REDES SOCIALES -->
+    
+      </div>
+      
+    
+      <!-- DERECHOS  -->
+      <div class="text-center p-3" style="background-color: black !important;">
+        © 2022 Copyright:
+        <a class="text-white" href="">LaGuaridaAnimal.com</a>
+      </div>
+    </footer>
+    
+
+</body>
+
+</html>

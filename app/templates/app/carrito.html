@@ -1,0 +1,57 @@
+{% extends 'app/baseCarrito.html' %}
+{% load static %}
+
+{% block contenido %}
+<div class="col-sm-8">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>imagen</th>
+                <th>Precio</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aux in listaCarrito %}
+            <tr>
+                <td>{{aux.nombreProducto}}</td>
+                <td><img src="{{ aux.imagen }}" alt="imagen" width="80"></td>
+                <td>${{aux.precioProducto}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmacion">Quitar</button>
+                    <!-- The Modal -->
+                    <div class="modal" id="confirmacion">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-dark">¿Estás seguro?</h4>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body text-dark">
+                                    Esto quitará el producto de tu carrito
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <a href="{% url 'quitarCarrito' aux.id %}" class="btn btn-danger btn-sm">Quitar</a>
+                                    <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!--BOTON-->
+    <br>
+    <a href="{% url 'pagar' %}" class="btn btn-success">Comprar</a>
+    <br>
+    <br>
+</div>
+
+
+{% endblock %}

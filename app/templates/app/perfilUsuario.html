@@ -1,0 +1,89 @@
+{% extends 'app/basePerfil.html' %}
+
+{% load static %}
+
+{% block contenido %}
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="{% static 'app/img/logo-duoc.svg'%}" width="200" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 color-izq">
+                <row class="perfil">
+                    <div class="col-sm-12 mt-3 d-flex justify-content-center">
+                        <img class="avatar" src="{% static 'app/img/marcs.jpg'%}" alt="">
+                    </div>
+                </row>
+                <ul class="nav nav-pills flex-column justify-content-center mt-1">
+                    <li>
+                        <p class="text-white text-center my-auto">Bienvenido: ca.buitreado</p>
+                    </li>
+                    <hr>
+                    <li class="nav-item mt-1">
+                        <a class="nav-link activo text-blanco" href="{% url 'indexLogin' %}"><i class="fa fa-home "></i> Inicio</a>
+                    </li>
+                    <li class="nav-item mt-1"> 
+                        <a class="nav-link text-blanco" href="{% url 'perfilEdit' %}"><i class="fa-solid fa-pen"></i> Editar Perfil</a>
+                    </li>
+                    <li class="nav-item mt-1"> 
+                        <a class="nav-link text-blanco" href="{% url 'listarProd' %}"><i class="fa-solid fa-pen"></i> Listado de productos</a>
+                    </li>
+                    <li class="nav-item mt-1"> 
+                        <a class="nav-link text-blanco" href="{% url 'agregarProd' %}"><i class="fa-solid fa-pen"></i> Agregar productos</a>
+                    </li>
+                    <li class="nav-item mt-1"> 
+                        <a class="nav-link text-blanco" href="{% url 'perfilHistorial' %}"><i class="fa-solid fa-pen"></i> Historial</a>
+                    </li>
+                
+                    <hr>
+                    <li class="nav-item mt-1">
+                        <a class="nav-link text-blanco" href="{% url 'index' %}"><i class="fa fa-right-from-bracket"></i> Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-10 fondo-madera">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="container mt-5 pt-5">
+                            <div class="row align-item-center " >
+                                <div class="col-sm-5 ">
+                                    <img class="d-block w-100"  src="{% static 'app/img/marcs.jpg'%}" alt="">
+                                </div>
+                    
+                                <div class="col-md-7 text-white ">
+                    
+                                    <form action="/action_page.php">
+                                        <div class="form-group">
+                                            <h4>Nombre:</h3>
+                                            <p>Carlos Buitreado </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <h4>Contraseña:</h3>
+                                            <h6>**************</h6>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <h4>Correo:</h4>
+                                            <p>buitreCarlos@gmail.com</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <h4>Direccion :</h4>
+                                            <p>1019</p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

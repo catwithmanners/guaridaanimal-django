@@ -1,0 +1,69 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<div class="container-fluid ">
+        <!--CARRUSEL-->
+        <div class="row" id="row-carrusel">
+            <div class="col-sm-12 backgrounnndddd pb-1">
+                <div id="demo" class="carousel slide pt-5" data-ride="carousel">
+
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ul>
+                    
+                    <!-- The slideshow -->
+                    <div class="carousel-inner text-light ">
+                        <div class="carousel-item h-100 active">
+                            <img alt="First slide" class="d-block w-100" src="{% static 'app/img/Carrusel/APORTA_NO_COMPRES.png' %}">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img alt="Second slide" class="d-block w-100" src="{% static 'app/img/Carrusel/Carru1.png' %}">
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img alt="Fourth slide" class="d-block w-100" src="{% static 'app/img/Carrusel/carru1b.png' %}">
+                        </div>
+                    </div>
+                    
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon rounded-circle"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>    
+            </div>
+        </div>
+        <!--CATEGORIAS-->
+        <div class="row fondo-claro2 pb-5" id="row-categorias">
+            <div id="separator-ribbon">
+                <div class="content fondo-blanco"></div>
+            </div>
+            <div class="col-sm-12">
+                
+                <div class="card-deck m-5">
+                <div class="card card-border" style="width:200px">
+                    <a href="{% url 'perrito' %}">
+                    <img class="card-img" src="{% static 'app/img/categorias/cate1.png'%}" alt="Card image">
+                    </a>
+                </div>
+                <div class="card card-border" style="width:200px">
+                    <a href="{% url 'gatito' %}">
+                        <img class="card-img" src="{% static 'app/img/categorias/cate2.png'%}" alt="Card image">
+                    </a>
+                </div>
+                <div class="card card-border" style="width:200px">
+                    <a href="{% url 'accesorio' %}">
+                        <img class="card-img" src="{% static 'app/img/categorias/cate3.png'%}" alt="Card image"> 
+                    </a>
+                </div>
+                </div>  
+            </div>
+        </div>
+</div>
+{% endblock %}

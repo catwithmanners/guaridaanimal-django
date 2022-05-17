@@ -1,0 +1,45 @@
+{% extends 'app/baseCrudUsers' %}
+
+{% load static %}
+
+{% block contenido %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-condensed table-striped">
+                    <tr>
+                        <td>RUT</td>
+                        <td>NOMBRE</td>
+                        <td>EDAD</td>
+                        <td>COMUNA</td>
+                        <td>REGION</td>
+                        <td>DIRECCION</td>
+                        <td>CORREO</td>
+                        <td>TELEFONO</td>
+                        <td>IMAGEN</td>
+                        <td>OPCIÓN</td>
+                    </tr>
+                    {% for aux in listaUsuarios %}
+                    <tr>
+                        <td>{{aux.run}}-{{aux.dv}}</td>
+                        <td>{{aux.nombre}} {{aux.apellido}}</td>
+                        <td>{{aux.edad}}</td>
+                        <td>{{aux.comuna}}</td>
+                        <td>{{aux.region}}</td>
+                        <td>{{aux.direccion}}</td>
+                        <td>{{aux.correo}}</td>
+                        <td>{{aux.telefono}}</td>
+                        {% if aux.imagen %}
+                            <td><img src="{{ aux.imagen.url }}" alt="imagen" width="80"></td>
+                        {% endif %}
+                        <td>
+                            <a href="{% url 'modProd' aux.run %}" class="btn btn-success">MODIFICAR</a>
+                            <a href="{% url 'eliminarProd' aux.run %}" class="btn btn-danger">ELIMINAR</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

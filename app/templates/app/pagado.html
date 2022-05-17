@@ -1,0 +1,22 @@
+{% extends 'app/baseCarrito.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<div class="col-sm-8 justify-content-center">
+    <div class="card bg-success justify-content-center" style="width:400px">
+        <div class="card-body"><h3>¡Felicitaciones!</h3></div>
+    </div>
+    <div class="card justify-content-center" style="width:400px">
+        <div class="card-body">
+            <p>Su compra se ha realizado correctamente.</p>
+            <p>Puede realizar un seguimiento de su compra en el siguiente enlace:</p>
+            
+            <a href="{% url 'perfilSegui' %}" class="btn btn-success">Seguimiento</a>
+            <a href="{% url 'indexLogin' %}" class="btn btn-info">Volver al inicio</a>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+{% endblock %}

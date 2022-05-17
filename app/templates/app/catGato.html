@@ -1,0 +1,47 @@
+{% extends 'app/baseCategorias.html' %}
+{% load static %}
+
+{% block fondoCarru %}
+  {% static 'app/img/PERROS/4.jpg'%}
+{% endblock %}
+
+{% block contenido %}
+  <!--ribbon-->
+  <div id="ribbon" class="container-fluid">
+    <div class="container fondo-madera-02 w-50 pl-5">
+      <div class="row align-item-center">        
+        <div class="col-sm p-3 text-light text-center">          
+          <h2 class="h2 text-shadow RibbonnText" >COMIDA PARA GATOS</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div class="container-fluid">
+        <div class="row fondo-madera">
+          {% for aux in listaProductos %}
+          {% if aux.tipo.tipo == 'Gato'%}
+            <div class="col-sm-4 py-3 px-4 ">
+              <div class="card bg-light" style="width:400px">
+                {% if aux.imagen %}
+                  <img src="{{ aux.imagen.url }}" class="img-fluid item-img w-100 mb-3">
+                {% else %}
+                  <img src="{% static 'app/img/defecto.png' %}" class="img-fluid item-img w-100 mb-3">
+                {% endif %}
+                <div class="card-body">
+                  <h4 class="card-title">{{ aux.nombre }}</h4>
+                  <p class="card-text">{{ aux.marca }}</p>
+                  <p class="card-text">Precio: ${{ aux.precio }}</p>
+                  <p class="card-text">Stock: {{ aux.stock }}</p>
+                  <p class="card-text">{{ aux.descripcion }}</p>
+                  <p class="card-text font-weight-bold">Para comprar debes <a href="{% url 'login' %}" class="btn btn-sm btn-success">iniciar sesión</a></p>
+                </div>
+              </div>
+            </div>
+            
+          {% endif %}
+          {% endfor %}
+        </div>
+        
+      </div>
+      
+{% endblock %}

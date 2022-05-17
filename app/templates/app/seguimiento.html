@@ -1,0 +1,92 @@
+{% extends 'app/basePerfil.html'%}
+
+{% load static %}
+
+{% block contenido %}
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="{% static 'app/img/logo-duoc.svg'%}" width="200" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 color-izq">
+                <div class="row perfil">
+                    <div class="col-sm-12 mt-3 d-flex justify-content-center">
+                        <img class="avatar" src="{% static 'app/img/marcs.jpg'%}" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="nav nav-pills flex-column mt-1">
+                            <li>
+                                <p class="text-white text-center my-auto">Bienvenido: ca.buitreado</p>
+                            </li>
+                            <hr>
+                            <li class="nav-item mt-1">
+                                <a class="nav-link activo text-blanco" href="{% url 'perfil' %}"><i class="fa fa-home "></i> Perfil</a>
+                            </li>
+                            <li class="nav-item mt-1"> 
+                                <a class="nav-link text-blanco" href="{% url 'perfilEdit' %}"><i class="fa-solid fa-pen"></i> Editar Perfil</a>
+                            </li>
+                            <hr>
+                            <li class="nav-item mt-1">
+                                <a class="nav-link text-blanco" href="{% url 'index' %}"><i class="fa fa-right-from-bracket"></i> Cerrar Sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10 fondo-madera">
+                <div class="row pb-5">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-11" >
+                        <div class="container" id="containerProducts">
+                            <div class="row align-item-center " >
+                                <div class="col-sm-4 text-light">
+                                    <h3>SEGUIMIENTO</h3>
+                                    <table class="table table-hover table-light">
+                                        <thead>
+                                        <tr>
+                                            <th>Hora</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>10:00</td>
+                                                <td>En tránsito a central.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12:00</td>
+                                                <td>Recepcionada en central</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12:20</td>
+                                                <td>Preparando para enviar a destino.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>   </td>
+                                                <td>   </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-sm-8 text-white ">
+                                    <span class="border border-dark">
+                                        <img src="{% static 'app/img/mapa/mapa-duoc.PNG'%}" alt="duoc-mapa" style="width: 100%;">
+                                    </span>                                       
+                                    <a class="text-blanco" href="{% url 'perfilHistorial' %}">Volver al historial.</a>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+{% endblock %}

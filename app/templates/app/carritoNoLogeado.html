@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% static 'app/css/style.css' %}
+{% static 'app/ '%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+      <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="{% static 'app/css/style.css'%}"> 
+</head>
+
+<body class="coni">
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark p-12 justify-content-center">
+            <a class="navbar-brand " href="#" >Carrito de Compras</a> 
+            <div>
+              <a class="logearse" href="login.html" style="text-align: end;"><h3>Iniciar Sesion</h3></a>  
+            </div>
+
+    </nav> 
+</header>  
+<!--PARTE DE TABLAS-->
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-sm-2 mt-3">
+          <ul class="nav flex-column">
+              <li class="nav-item">
+                <img class="login" src="{% static 'app/img/login.png'%}" alt="" width="100px">
+                <button type="button" class="btn btn-light active mt-4">Nombre:__________</button>
+              </li>
+              <li class="nav-item">
+                  <button type="button" class="btn btn-light active mt-4">Apellido:__________</button>
+              </li>
+          </ul>
+        </div>
+        <div class="col-sm-8 mt-6">
+        </div>
+        <div class="col-sm-2">
+          <a href="logear.html">
+            <img src="{% static 'app/img/carrito-de-compras.png'%}" alt="" width="80px">
+          </a>
+        </div>
+  </div>
+  <div class="tabla">
+        <table class="table table-dark table-striped mt-4">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tiene que iniciar sesion</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+                <td>?</td>
+              </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                  <td>Tiene que iniciar sesion</td>
+                  <td>?</td>
+                  <td>?</td>
+                  <td>?</td>
+                  <td>?</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Tiene que iniciar sesion</td>
+                  <td>?</td>
+                  <td>?</td>
+                  <td>?</td>
+                  <td>?</td>
+                </tr>
+              </tbody>
+        </table>
+  </div>
+    <footer>  
+      <div class="fixed-bottom">
+        <nav class="navbar navbar-expand-sm bg-dark mt-5">
+          <img src="{% static 'app/img/servicio-removebg-preview.png'%}" alt="" width="150px" height="100px">
+          <h3>Si tiene algún reclamo, puede llamar al 600 700 900</h3>
+        </nav>
+      </div>
+
+    </footer>
+</div>
+</body>
+</html>

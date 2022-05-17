@@ -1,0 +1,45 @@
+{% extends 'app/baseCategoriasLogin.html' %}
+
+{% load static %}
+
+{% block fondoCarru %}
+    {% static 'app/img/PERROS/6.jpg'%}
+{% endblock %}
+
+{% block contenido %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-condensed table-striped text-light bg-dark">
+                    <tr>
+                        <td>CODIGO</td>
+                        <td>NOMBRE</td>
+                        <td>MARCA</td>
+                        <td>PRECIO</td>
+                        <td>STOCK</td>
+                        <td>TIPO</td>
+                        <td>IMAGEN</td>
+                        <td>OPCIÓN</td>
+                    </tr>
+                    {% for aux in listaProductos %}
+                    <tr>
+                        <td>{{aux.codigo}}</td>
+                        <td>{{aux.nombre}}</td>
+                        <td>{{aux.marca}}</td>
+                        <td>${{aux.precio}}</td>
+                        <td>{{aux.stock}}</td>
+                        <td>{{aux.tipo}}</td>
+                        {% if aux.imagen %}
+                            <td><img src="{{ aux.imagen.url }}" alt="imagen" width="80"></td>
+                        {% endif %}
+                        <td>
+                            <a href="{% url 'modProd' aux.codigo %}" class="btn btn-success">MODIFICAR</a>
+                            <a href="{% url 'eliminarProd' aux.codigo %}" class="btn btn-danger">ELIMINAR</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
