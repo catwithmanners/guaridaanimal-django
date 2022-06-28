@@ -33,7 +33,6 @@
               <h4 class="card-title">{{ aux.nombre }}</h4>
               <p class="card-text">{{ aux.marca }}</p>
               <p class="card-text">Precio: ${{ aux.precio }}</p>
-              <p class="card-text">Stock: {{ aux.stock }}</p>
               <p class="card-text">{{ aux.descripcion }}</p>
               <form action="" method="POST">
                 {% csrf_token %}
@@ -49,6 +48,16 @@
       {% endif %}
       {% endfor %}
     </div>
-  </div>
-
+  </div> 
+{% endblock %}
+{% block contenido2 %}
+<div class="container-fluid">
+    <div class="row fondo-madera">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 d-flex flex-row-reverse">
+          <a href="{% url 'productosApi' %}" class="btn btn-warning">Ir a un universo paralelo</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

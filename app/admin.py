@@ -25,7 +25,19 @@ class ItemsCarroAdmin(admin.ModelAdmin):
     search_fields = ['id', 'nombreProducto']
     list_per_page = 3
 
+class HistorialAdmin(admin.ModelAdmin):
+    list_display = ['orden','usuario','total','codigo_seg']
+    search_fields = ['orden', 'usuario']
+    list_per_page = 3
+
+class SeguimientoAdmin(admin.ModelAdmin):
+    list_display = ['codigo_seg','estado_seg']
+    search_fields = ['codigo_seg', 'estado_seg']
+    list_per_page = 3
+
 admin.site.register(TipoProducto,TipoProductoAdmin)
 admin.site.register(Producto,ProductoAdmin)
 admin.site.register(Usuario,UsuarioAdmin)
 admin.site.register(ItemsCarro,ItemsCarroAdmin)
+admin.site.register(Historial,HistorialAdmin)
+admin.site.register(Seguimiento, SeguimientoAdmin)

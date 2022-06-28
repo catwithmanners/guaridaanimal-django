@@ -34,11 +34,11 @@
             <li class="nav-item">
                 <a class="nav-link text-light" href="#row-categorias">CATEGORIAS</a>
             </li>
+            <li class="nav-item pl-3">
+                <a class="nav-link bg-success text-light bg-suscrip" href="{% url 'registro' %}">REGISTRARSE</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link text-light" href="{% url 'login' %}">INICIAR SESIÓN</a>            
-            </li>
-            <li class="nav-item pl-3">
-                <a class="nav-link bg-success text-light bg-suscrip" href="{% url 'agregarUsuario' %}">REGISTRARSE</a>
             </li>
             </ul>
         </div>
@@ -59,9 +59,15 @@
     </div>
 <header>
 <body class="fondo-madera">
-    {% block contenido %}
+    <div class="container-fluid fondo-madera">
+        {% block contenido %}
 
-    {% endblock %}
+        {% endblock %}
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- Footer -->
     <footer class="fondo-oscuro text-center text-white "> 
         <div class="container p-4">

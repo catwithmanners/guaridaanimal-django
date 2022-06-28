@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block contenido %}
-
 <nav class="navbar navbar-expand-sm bg-light justify-content-center">
     <a href="">
         <img src="{% static 'app/img/webpay-removebg-preview.png'%}" alt="" width="350px" height="90px">
@@ -12,7 +11,7 @@
 <div class="col-sm-4">
     <div class="card mt-4 justify-content-center" style="width:400px">
         <div class="card-body">
-            <h5 class="card-title ">   <button type="button" class="btn btn-warning btn-block ">Proceso de Pago</button> </h5>
+            <h5 class="card-title ">   <button type="button" class="btn btn-warning btn-block font-weight-bold">Proceso de Pago</button> </h5>
             <p class="card-text">Usuario: <input type="text" class="form-control" id="usr"></p>
             <p class="card-text">Contraseña: <input type="password" class="form-control" id="pwd"></p>
             <a href="{% url 'pago' %}" class="btn btn-success btn-sm btn-block">Confirmar</a>

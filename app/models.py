@@ -81,3 +81,36 @@ class Venta(models.Model):
 
     class Meta:
         db_table = 'db_venta'
+
+
+class Suscripcion(models.Model):
+    username_sus = models.CharField(max_length=20,null=False, primary_key=True, default="none")
+    estado_sus=models.BooleanField()
+
+    def __int__(self):
+        return self.codigo_sus
+
+    class Meta:
+        db_table = 'db_suscripcion'
+
+class Seguimiento(models.Model):
+    codigo_seg = models.IntegerField(null=False, primary_key=True)
+    estado_seg = models.CharField(max_length=60)
+
+    def __str__(self):
+        return self.estado_seg
+
+    class Meta:
+        db_table = 'db_seguimiento'
+
+class Historial(models.Model):
+    orden = models.IntegerField(null=False, primary_key=True)
+    usuario = models.CharField(max_length=60)
+    total = models.IntegerField()
+    codigo_seg = models.ForeignKey(Seguimiento, on_delete=models.CASCADE)
+
+    def __int__(self):
+        return self.orden
+
+    class Meta:
+        db_table = 'db_historial'

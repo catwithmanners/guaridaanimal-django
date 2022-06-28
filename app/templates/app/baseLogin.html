@@ -37,6 +37,12 @@
         <li class="nav-item">
           <a class="nav-link text-light" href="{% url 'perfil' %}">PERFIL</a>
         </li>
+        {% if user.is_staff %}
+        <li class="nav-item">
+            <a class="nav-link text-light" href="http://127.0.0.1:8000/admin/">ADMINISTRACION</a>
+        </li>
+        {% endif %} 
+
         <li class="nav-item">
           <button type="button" style="background-color: maroon;" class="nav-link btn text-light font-weight-bold" data-toggle="modal" data-target="#cierre">Cerrar sesión</button>
           <!-- The Modal -->
@@ -74,10 +80,14 @@
   </div>
 <header>
 <body class="fondo-madera">
+  <div class="container-fluid fondo-madera">
     {% block contenido %}
 
     {% endblock %}
-
+  </div>
+    <br>
+    <br>
+    <br>
     <!-- Footer -->
     <footer class="fondo-oscuro text-center text-white "> 
         <div class="container p-4">

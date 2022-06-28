@@ -16,12 +16,12 @@
             <div class="col-sm-2 color-izq">
                 <row class="perfil">
                     <div class="col-sm-12 mt-3 d-flex justify-content-center">
-                        <img class="avatar" src="{% static 'app/img/marcs.jpg'%}" alt="">
+                        <img class="avatar" src="{% static 'app/img/dog-favicon.png'%}" alt="">
                     </div>
                 </row>
                 <ul class="nav nav-pills flex-column justify-content-center mt-1">
                     <li>
-                        <p class="text-white text-center my-auto">Bienvenido: ca.buitreado</p>
+                        <p class="text-white text-center my-auto">Bienvenido: {{ user.username }}</p>
                     </li>
                     <hr>
                     <li class="nav-item mt-1">
@@ -30,6 +30,11 @@
                     <li class="nav-item mt-1"> 
                         <a class="nav-link text-blanco" href="{% url 'perfilEdit' %}"><i class="fa-solid fa-pen"></i> Editar Perfil</a>
                     </li>
+                    {% if user.is_cliente %}
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{% url 'suscripcion' %}" class="fa-solid fa-pen"></i> Suscripcion</a>
+                    </li>
+                    {% endif %} 
                     <li class="nav-item mt-1"> 
                         <a class="nav-link text-blanco" href="{% url 'listarProd' %}"><i class="fa-solid fa-pen"></i> Listado de productos</a>
                     </li>
@@ -56,7 +61,7 @@
                         <div class="container mt-5 pt-5">
                             <div class="row align-item-center " >
                                 <div class="col-sm-5 ">
-                                    <img class="d-block w-100"  src="{% static 'app/img/marcs.jpg'%}" alt="">
+                                    <img class="d-block w-100"  src="{% static 'app/img/dog-favicon.png'%}" alt="">
                                 </div>
                     
                                 <div class="col-md-7 text-white ">
@@ -64,20 +69,16 @@
                                     <form action="/action_page.php">
                                         <div class="form-group">
                                             <h4>Nombre:</h3>
-                                            <p>Carlos Buitreado </p>
+                                            <p> {{ user.username }} </p>
                                         </div>
                                         <div class="form-group">
                                             <h4>Contraseña:</h3>
-                                            <h6>**************</h6>
+                                            <h6>********************</h6>
                                         </div>
                                         
                                         <div class="form-group">
                                             <h4>Correo:</h4>
                                             <p>buitreCarlos@gmail.com</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <h4>Direccion :</h4>
-                                            <p>1019</p>
                                         </div>
                                     </form>
                                 </div>

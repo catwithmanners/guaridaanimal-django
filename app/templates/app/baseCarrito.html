@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'app/css/style.css'%}"> 
 </head>
 <header>
-    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: black;">
+    <nav class="navbar navbar-expand-sm navbar-dark"  style="background-color: black;">
         <!-- Brand -->
         <a class="navbar-brand" href="#"><img src="{% static 'app/img/logo.png'%}" alt="" width="250"></a>
         <!-- Toggler/collapsibe Button -->
@@ -57,15 +57,16 @@
         </div>
     </nav>
 </header>
-<body class="fondo-madera">
+<body class="fondo-madera-02">
     <div class="container-fluid">
         <br>
-        <div class="row">
-            <div class="col-sm-2"></div>
+        <br>
+        <br>
             {% block contenido %}
             {% endblock %}
-            <div class="col-sm-2"></div>
-        </div>
+        <br>
+        <br>
+        <br>
     </div>
     <!-- Footer -->
     <footer class="fondo-oscuro text-center text-white "> 

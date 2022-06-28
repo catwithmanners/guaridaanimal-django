@@ -1,0 +1,54 @@
+{% extends 'app/baseCategoriasLogin.html' %}
+
+{% load static %}
+
+{% block fondoCarru %}
+    {% static 'app/img/studio.jpg'%}
+{% endblock %}
+
+{% block contenido %} 
+
+<!--Producto-->
+<div class="container-fluid">
+    <div class="row fondo-madera">
+    {% for aux in listaUniApi %}
+        <div class="col-sm-4 py-3 px-4">
+            <div class="card text-light" style="width:400px; background-color: black;">
+                {% if aux.image %}
+                    <img src="{{ aux.image }}" class="img-fluid item-img w-100 mb-3 border border-white">
+                {% endif %}
+                <div class="card-body">
+                    <h4 class="card-title">{{ aux.title }}</h4>
+                    <p class="card-text">Director: {{ aux.director }}</p>
+                    <p class="card-text">Productor: {{ aux.producer }}kg</p>
+                    <p class="card-text">Año: {{ aux.release_date }}</p>
+                    <p class="card-text">Duración: {{ aux.running_time }} minutos</p>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="codigo" id="codigo" value="{{ aux.codigo }}">
+                        <input type="hidden" name="nombre" id="nombre" value="{{ aux.nombre }}">
+                        <input type="hidden" name="precio" id="precio" value="{{ aux.precio }}">
+                        <input type="hidden" name="imagen" id="imagen" value="{{ aux.imagen.url }}">
+                        <!--<input type="submit" value="Añadir al carrito" style="cursor: pointer;" class="btn btn-success btn-sm ml-auto">-->
+                    </form>
+                {% if aux.movie_banner %}
+                    <img src="{{ aux.movie_banner }}" class="img-fluid item-img w-100 mb-3 border border-white">
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block contenido2 %}
+<div class="container-fluid">
+    <div class="row fondo-madera">
+        <div class="col-sm-4">
+            <a href="{% url 'productosApi' %}" class="btn btn-warning">Volver al universo anterior</a>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 d-flex flex-row-reverse"></div>
+    </div>
+</div>
+{% endblock %}

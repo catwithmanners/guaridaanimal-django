@@ -1,0 +1,37 @@
+{% extends 'app/baseCrudUsers.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block navbar %}
+<li class="nav-item active">
+    <a class="nav-link text-light" href="{% url 'indexLogin'%}">INICIO</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link text-light" href="{% url 'listarUsuario' %}">VOLVER</a>            
+</li>
+{% endblock %}
+{% block contenido %}
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header bg-success"><h3>Modificar usuario</h3></div>
+            <div class="card-body bg-light">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <!--es un error de seguridad-->
+                    {% csrf_token %}
+                    <table>
+                        {{form}}
+                    </table>
+                    <input type="submit" class="btn btn-success text-light font-weight-bold" value="Guardar">
+                    <a href="{% url 'listarUsuario' %}" class="btn btn-info">Ir a listado</a>
+                </form>
+                <br>
+                {{mensaje}}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+{% endblock %}

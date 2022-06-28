@@ -17,14 +17,14 @@
             <div class="col-sm-2 color-izq">
                 <div class="row perfil">
                     <div class="col-sm-12 mt-3 d-flex justify-content-center">
-                        <img class="avatar" src="{% static 'app/img/marcs.jpg'%}" alt="">
+                        <img class="avatar" src="{% static 'app/img/dog-favicon.png' %}" alt="">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="nav nav-pills flex-column mt-1">
                             <li>
-                                <p class="text-white text-center my-auto">Bienvenido: ca.buitreado</p>
+                                <p class="text-white text-center my-auto">Bienvenido: {{ user.username }}</p>
                             </li>
                             <hr>
                             <li class="nav-item mt-1">
@@ -32,6 +32,9 @@
                             </li>
                             <li class="nav-item mt-1"> 
                                 <a class="nav-link text-blanco" href="{% url 'perfilEdit' %}"><i class="fa-solid fa-pen"></i> Editar Perfil</a>
+                            </li>
+                            <li class="nav-item mt-1"> 
+                                <a class="nav-link text-blanco" href="{% url 'perfilHistorial' %}"><i class="fa-solid fa-pen"></i> Volver a historial</a>
                             </li>
                             <hr>
                             <li class="nav-item mt-1">
@@ -41,51 +44,73 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-sm-10 fondo-madera">
-                <div class="row pb-5">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-11" >
-                        <div class="container" id="containerProducts">
-                            <div class="row align-item-center " >
-                                <div class="col-sm-4 text-light">
-                                    <h3>SEGUIMIENTO</h3>
-                                    <table class="table table-hover table-light">
-                                        <thead>
-                                        <tr>
-                                            <th>Hora</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>10:00</td>
-                                                <td>En tránsito a central.</td>
-                                            </tr>
-                                            <tr>
-                                                <td>12:00</td>
-                                                <td>Recepcionada en central</td>
-                                            </tr>
-                                            <tr>
-                                                <td>12:20</td>
-                                                <td>Preparando para enviar a destino.</td>
-                                            </tr>
-                                            <tr>
-                                                <td>   </td>
-                                                <td>   </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="card fondo-madera-02 mx-5 px-5" style="box-shadow: 0 0 10px black, 0 0 40px black, 0 0 80px black;">
+
+                    <div class="card-body">
+                        <h3 class="card-text text-light">Seguimiento orden nº: {{ historial.orden }}.</h3>
+
+                                {% if historial.codigo_seg.codigo_seg == 1 %}
+                                <br>
+                                <div class="d-flex justify-content-start">
+                                    <h4 class="text-light">Estado: </h4><h4 class="text-warning">{{ historial.codigo_seg }} </h4>
                                 </div>
-                                <div class="col-sm-8 text-white ">
-                                    <span class="border border-dark">
-                                        <img src="{% static 'app/img/mapa/mapa-duoc.PNG'%}" alt="duoc-mapa" style="width: 100%;">
-                                    </span>                                       
-                                    <a class="text-blanco" href="{% url 'perfilHistorial' %}">Volver al historial.</a>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated text-dark" style="width:25%">25%</div>
                                 </div>
-                            </div>   
-                        </div>
+                                <br>
+                                <br>
+                                <h5 class="text-light">Hola, tu orden de compra ha sido recibida y está a la espera de una validación.</h5>
+                                <h5 class="text-light">Una vez esta sea validada, pasará al proceso de preparación.</h5>
+                                {% endif %}
+                                {% if historial.codigo_seg.codigo_seg == 2 %}
+                                <br>
+                                <div class="d-flex justify-content-start">
+                                    <h4 class="text-light">Estado: </h4><h4 class="text-primary">{{ historial.codigo_seg }} </h4>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:50%">50%</div>
+                                </div>
+                                <br>
+                                <br>
+                                <h5 class="text-light">Hola, tu orden de compra ha sido validada, dentro de poco pasará a reparto.</h5>
+                                <h5 class="text-light">Estamos preparando tus productos.</h5>
+                                {% endif %}
+                                {% if historial.codigo_seg.codigo_seg == 3 %}
+                                <br>
+                                <div class="d-flex justify-content-start">
+                                    <h4 class="text-light">Estado: </h4><h4 class="text-info">{{ historial.codigo_seg }} </h4>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:75%">75%</div>
+                                </div>
+                                <br>
+                                <br>
+                                <h5 class="text-light">Hola, tu orden de compra ha pasado a reparto.</h5>
+                                <h5 class="text-light">¡Ya falta poco para que tengas tus productos!</h5>
+                                {% endif %}
+                                {% if historial.codigo_seg.codigo_seg == 4 %}
+                                <br>
+                                <div class="d-flex justify-content-start">
+                                    <h4 class="text-light">Estado: </h4><h4 class="text-success">{{ historial.codigo_seg }} </h4>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:100%">100%</div>
+                                </div>
+                                <br>
+                                <br>
+                                <h5 class="text-light">Hola, tu orden de compra ha sido entregada.</h5>
+                                <h5 class="text-light">¡Disfruta de tus productos!</h5>
+                                {% endif %}
                     </div>
-                </div> 
+
+
+                </div>
             </div>
         </div>
     </div>
